@@ -1,0 +1,134 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'popins', sans-serif;
+}
+
+#container{
+   height: 100vh;
+   width: 100wh;
+   background-image: url(images/background.png);
+   background-position: center;
+   background-size: cover;
+   padding: 0 8%;
+   position: relative;
+}
+
+.logo{
+   height: 60px;
+   width: 100px;
+   border-radius: 10px;
+   padding: 20px 0;
+   cursor: pointer;
+   color: #b89fe0;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   box-shadow: 1px 2px 20px 1px #907ab6;
+}
+
+.content{
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   color: white;
+}
+
+.content h1{
+   font-size: 50px;
+   font-weight: 600;
+}
+
+.content h1 span{
+   color: #ff375f;
+}
+
+.content button{
+   background: transparent;
+   border: 2px solid #fff;
+   outline: none;
+   padding: 12px 25px;
+   color: white;
+   display: flex;
+   align-items: center;
+   margin-top: 30px;
+   cursor: pointer;
+}
+
+.content button img{
+   width: 15px;
+   margin-left: 10px;
+}
+
+.launch-time{
+   display: flex;
+}
+.launch-time div{
+   margin-right: 30px;
+}
+
+.launch-time div p{
+   font-size: 60px;
+   margin-bottom: -10px;
+}
+
+.rocket{
+   width: 180px;
+   position: absolute;
+   right: 10%;
+   bottom: 0;
+   animation: rocket 3s linear infinite;
+}
+
+@keyframes rocket {
+   0%{
+      bottom: 0;
+      opacity: 0;
+   }
+   100%{
+      bottom: 100%;
+      opacity: 1;
+   }
+}
+
+.weekLeft{
+   color: white;
+   height: 400px;
+   width: 300px;
+   position: absolute;
+   left: 600px;
+}
+
+.weekLeft-heading, .week-left-h3{
+   color: #ff375f;
+   font-size: 25px;
+   text-align: center;
+   padding: 10px;
+}
+
+.currWeek{
+   font-size: 20px;
+   text-align: center;
+   padding: 10px;
+}
+
+.days-name{
+   border: 5px solid rgb(189, 143, 188);
+   border-radius: 20%;
+   height: 280px;
+   font-size: 20px;
+   display: flex;
+   justify-content: center;
+   padding: 5px;
+}
+
+.days-name li{
+   padding: 5px 0;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-weight: bold;
+}
+
+.days-name li:hover{
+   scale: 1.1;
+   transition: 0.1s;
+   cursor: pointer;
+}

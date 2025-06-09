@@ -1,0 +1,30 @@
+* {
+   margin: 0;
+   padding: 0;
+   font-family: 'Gilroy';
+}
+
+h2{
+   color : white;
+   position : absolute;
+   left : 29rem;
+   top: 3rem;
+}
+
+html, body{
+   height: 100%;
+   width: 100%;
+}
+
+#container {
+   /* center the div without parent div... */
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+
+   background-color: black;
+   height: 200px;
+   width: 400px;
+   border: 2px solid black;
+}
