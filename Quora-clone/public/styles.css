@@ -1,0 +1,39 @@
+body{
+    background-color: #FFF287;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -30px;
+}
+
+
+h1{
+    color: maroon;
+    text-align: center;
+}
+
+form{
+    margin-top: 80px;
+}
+
+.btn{
+    border-radius: 25px;
+    height: 30px;
+    background-color: #C83F12;
+    font-size: 17px;
+}
+
+.main-heading{
+    margin-top: 50px;
+    height: 320px;
+    width: 300px;
+    font-size: 30px;
+}
+
+.main-heading h1 span{
+    font-size: 80px;
+}

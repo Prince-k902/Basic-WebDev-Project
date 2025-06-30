@@ -1,0 +1,24 @@
+body{
+    background-color: #FFF287;
+}
+
+.all-posts{
+    background-color: #f6b35c;
+    border-radius: 20px;
+    padding-left: 20px;
+    width: 50%;
+}
+
+a{
+    text-decoration: none;
+    color: #3B060A;
+    margin-left: 20px;
+}
+
+.btn{
+    border-radius: 25px;
+    height: 30px;
+    background-color: #C83F12;
+    font-size: 17px;
+    margin-left: 20px;
+}

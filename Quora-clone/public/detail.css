@@ -1,0 +1,32 @@
+body{
+    background-color: #FFF287;
+}
+
+h2{
+    color: maroon;
+}
+
+.content{
+    background-color: #f6b35c;
+    height: 100px;
+    width: 60%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+button{
+    border-radius: 25px;
+    height: 30px;
+    background-color: #C83F12;
+    font-size: 17px;
+}
+
+textarea{
+    border-radius: 10px;
+    background-color: #fff9c6;
+}
+
+input{
+    border-radius: 10px;
+    background-color: #fff9c6;
+}
