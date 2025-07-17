@@ -1,0 +1,37 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailed</title>
+    <link rel="stylesheet" href="/css/detail.css">
+    <script>
+        function confirmDelete(){
+            return confirm("Are you sure to delete list.");
+        } 
+    </script>
+</head> -->
+
+<% layout('/layouts/boilerplate') -%>
+
+<body>
+    <a class="update-link"  href="/lists/<%= list._id %>/edit">Edit</a>
+    <form method="POST" action="/lists/<%= list._id %>?_method=DELETE" onsubmit="return confirmDelete()">
+        <button class="delete-link">Delete</button>
+    </form>
+    <div class="content">
+        <div class="left">
+            <h1><%= list.title %></h1>
+            <img src="<%= list.image.url %>">
+        </div>
+        <div class="right">
+            <h3><%= list.title %></h3>
+            <p><%= list.description %></p>
+            <p>Location: <b><%= list.location %>, <%= list.country %></b></p>
+            <hr>
+            <h4>&#8377; <%= list.price.toLocaleString("en-IN") %>/day/person</h4>
+            <hr>
+        </div>
+    </div>
+</body>
+</html>

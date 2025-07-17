@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit list</title>
+    <link rel="stylesheet" href="/css/detail.css">
+</head>
+<body>
+    <div class="content">
+        <div class="left">
+            <h2>Edit "<%= list.title %>" here...</h2>
+            <br>
+            <img src="<%= list.image.url %>" height="300">
+        </div>
+        <div class="right">
+            <form method="POST" action="/lists/<%= list._id %>?_method=PUT">
+                title: <input type="text" name="list[title]" value="<%= list.title %>"><br>
+                description: <br> <textarea name="list[description]"><%= list.description %></textarea><br>
+                url : <input type="text" name="list[image][url]" value="<%= list.image.url %>"><br>
+                price : <input type="text" name="list[price]" value="<%= list.price %>"><br>
+                location : <input type="text" name="list[location]" value="<%= list.location %>"><br>
+                country : <input type="text" name="list[country]" value="<%= list.country %>">
+                <br><br>
+                <button>UPDATE</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air-bnb</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head> -->
+<% layout('/layouts/boilerplate') -%>
+
+<body>
+    <h2>All listings</h2>
+    <!-- <a class="btn" href="http://localhost:8080/lists/new">Add</a> -->
+    
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+        <% for(list of lists) { %>
+            <a href="/lists/<%= list._id %>" class="each-list">
+                <div class="card col" >
+                    <div class="card-img">
+                        <img src="<%= list.image.url %>" class="card-img-top" alt="listing images">
+                    </div>
+                    <div class="card-body">
+                        <!-- hover effect, bootstrap class  -->
+                        <div class="card-img-overlay"></div>
+
+                        <p class="card-text"><b><%= list.title %></b></p>
+                        <p class="card-text">&#8377; <%= list.price.toLocaleString("en-IN") %>/night</p>
+                    </div>                    
+                </div>
+            </a>
+        <% } %>
+    </div>
+
+<!--  Without using Bootstrap...
+
+     <div class="container">
+        <% for(list of lists) { %>
+            <div class="content">
+                <a href="/lists/<%= list._id %>"><%= list.title %></a>
+                <a class="update-link"  href="/lists/<%= list._id %>/edit">Edit</a>
+            </div>
+            <hr>
+        <% } %>
+    </div> -->
+</body>
+</html>

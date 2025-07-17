@@ -1,0 +1,35 @@
+body{
+    background-color: #e9f5db;
+}
+
+.btn{
+    font-size: large;
+    position: absolute;
+    right: 20%;
+}
+
+.btn, .update-link{
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 40px;
+    text-align: center;
+}
+
+.container{
+    width: 70%;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.content{
+    display: flex;
+    justify-content: space-between;
+}
+
+h2{
+    color: #582f0e;
+    font-family: cursive;
+}

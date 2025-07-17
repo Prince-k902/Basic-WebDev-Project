@@ -1,0 +1,85 @@
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  display: flex;
+  
+}
+
+.navbar{
+    height: 4.5rem;
+    background-color: white;
+}
+
+.fa-webflow{
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.nav-link{
+    color: #222222;
+}
+
+.f-info-links,
+.f-info-brand,
+.f-info-socials{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.f-info-socials i{
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+.f-info{
+    height: 8rem;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #ebebeb;
+}
+
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+
+.card{
+    border: none;
+    margin: 1rem 0rem;
+}
+
+.card-img-top{
+    width: 100%;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+
+.card-body{
+    padding: 0;
+}
+
+.card-text{
+    font-weight: 400;
+    margin: 0;
+}
+
+.each-list{
+    text-decoration: none;
+}
+
+/* CARD EFFECT */
+.card-img-overlay{
+    opacity: 0;
+}
+.card-img-overlay:hover{
+    opacity: 0.1;
+    background-color: white;
+}
