@@ -1,19 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>windBNB</title>
-    <link rel="stylesheet" href="/css/home.css">
+    <style>
+      .content {
+        max-width: 800px;
+        width: 100%;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+      .left h1 {
+        font-size: 3rem;
+        font-weight: 600;
+      }
+    </style> 
 </head>
-<body>
-    <div class="content">
-        <div class="left">
-            <h1>Welcome to <br> windBNB</h1>
+    <% layout('/layouts/boilerplate') -%>
+ 
+  <body>
+    <div class="container text-center">
+      <div class="content row align-items-center">
+        <div class="col-md-8 left text-md-start text-center mb-4 mb-md-0">
+          <h1>Welcome to <br> <span class="text-primary">windBNB</span></h1>
         </div>
-        <div class="right">
-            <a class="btn" href="/lists">Explore</a>
+        <div class="col-md-4 right text-md-end text-center">
+          <a class="btn btn-primary btn-lg" href="/lists">Explore</a>
         </div>
+      </div>
     </div>
-</body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

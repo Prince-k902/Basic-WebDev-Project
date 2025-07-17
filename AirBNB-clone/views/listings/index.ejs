@@ -12,13 +12,14 @@
     <h2>All listings</h2>
     <!-- <a class="btn" href="http://localhost:8080/lists/new">Add</a> -->
     
-    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+    <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-1">
         <% for(list of lists) { %>
             <a href="/lists/<%= list._id %>" class="each-list">
                 <div class="card col" >
-                    <div class="card-img">
-                        <img src="<%= list.image.url %>" class="card-img-top" alt="listing images">
+                    <div class="card-img" style="aspect-ratio: 4 / 3; overflow: hidden;">
+                        <img src="<%= list.image.url %>" class="card-img-top w-100 h-100" style="object-fit: cover;" alt="listing image">
                     </div>
+
                     <div class="card-body">
                         <!-- hover effect, bootstrap class  -->
                         <div class="card-img-overlay"></div>

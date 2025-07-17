@@ -1,12 +1,18 @@
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
   display: flex;
-  
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container{
+    flex:1;
 }
 
 .navbar{
     height: 4.5rem;
     background-color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
 }
 
 .fa-webflow{
@@ -82,4 +88,20 @@ body {
 .card-img-overlay:hover{
     opacity: 0.1;
     background-color: white;
+}
+
+/* New page styling */
+.add-btn{
+    background-color: #fe424d;
+    border: none;
+}
+
+.edit-btn{
+    background-color: #fe424d;
+    border: none;
+}
+
+.show-img {
+      max-height: 400px;
+      object-fit: cover;
 }

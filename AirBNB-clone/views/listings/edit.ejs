@@ -1,30 +1,55 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit list</title>
     <link rel="stylesheet" href="/css/detail.css">
-</head>
+</head> -->
+<% layout("/layouts/boilerPlate.ejs") -%>
 <body>
-    <div class="content">
-        <div class="left">
-            <h2>Edit "<%= list.title %>" here...</h2>
+<div class="row">
+    <div class="col-md-8 offset-2">
+        <div class="content">
             <br>
-            <img src="<%= list.image.url %>" height="300">
-        </div>
-        <div class="right">
+            <h2 style="color: #fe424d;">Edit "<%= list.title %>" here...</h2>
+            <br>
+            <img src="<%= list.image.url %>" height="300" class="mb-3 card-img-top">
+            <br>
+        
             <form method="POST" action="/lists/<%= list._id %>?_method=PUT">
-                title: <input type="text" name="list[title]" value="<%= list.title %>"><br>
-                description: <br> <textarea name="list[description]"><%= list.description %></textarea><br>
-                url : <input type="text" name="list[image][url]" value="<%= list.image.url %>"><br>
-                price : <input type="text" name="list[price]" value="<%= list.price %>"><br>
-                location : <input type="text" name="list[location]" value="<%= list.location %>"><br>
-                country : <input type="text" name="list[country]" value="<%= list.country %>">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title: </label>
+                    <input type="text" name="list[title]" value="<%= list.title %>" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description: </label>
+                    <textarea name="list[description]" class="form-control"><%= list.description %></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="url" class="form-label">Image link: </label>
+                    <input type="text" name="list[image][url]" value="<%= list.image.url %>" class="form-control">
+                </div>
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label for="price" class="form-label">Price: </label>
+                        <input type="text" name="list[price]" value="<%= list.price %>" class="form-control">
+                    </div>
+                    <div class="mb-3 col-md-8">
+                        <label for="country" class="form-label">Country: </label>
+                        <input type="text" name="list[country]" value="<%= list.country %>" class="form-control">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location:</label>
+                    <input type="text" name="list[location]" value="<%= list.location %>" class="form-control">
+                </div>
+                <br>
+                <button class="btn btn-dark edit-btn">UPDATE</button>
                 <br><br>
-                <button>UPDATE</button>
             </form>
         </div>
     </div>
+</div>
 </body>
-</html>
+<!-- </html> -->
