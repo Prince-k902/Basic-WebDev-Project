@@ -1,11 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Air-bnb</title>
-    <link rel="stylesheet" href="/css/index.css">
-</head> -->
 <% layout('/layouts/boilerplate') -%>
 
 <body>
@@ -31,17 +23,5 @@
             </a>
         <% } %>
     </div>
-
-<!--  Without using Bootstrap...
-
-     <div class="container">
-        <% for(list of lists) { %>
-            <div class="content">
-                <a href="/lists/<%= list._id %>"><%= list.title %></a>
-                <a class="update-link"  href="/lists/<%= list._id %>/edit">Edit</a>
-            </div>
-            <hr>
-        <% } %>
-    </div> -->
 </body>
 </html>

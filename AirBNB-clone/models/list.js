@@ -2,10 +2,10 @@ const mongoose = require("mongoose");
 
 const listSchema = new mongoose.Schema({
     title:{
-        type: "String",
+        type: String,
     },
     description:{
-        type: "String",
+        type: String,
     },
     image:{
         filename: {
@@ -19,13 +19,13 @@ const listSchema = new mongoose.Schema({
         }
     },
     price:{
-        type: "Number",
+        type: Number,
     },
     location:{
-        type: "String",
+        type: String,
     },
     country:{
-        type: "String",
+        type: String,
     }
 });
 
