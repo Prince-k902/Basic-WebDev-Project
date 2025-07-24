@@ -5,6 +5,7 @@ const path = require("path");
 const app = express();
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
+const wrapAsync = require("./utils/wrapAsync.js");
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname,"/views")); 
@@ -43,17 +44,16 @@ app.get("/lists/:id", async (req, res)=>{
 });
 
 //CREATE route
-app.post("/lists", async (req, res)=>{
+app.post("/lists", wrapAsync( async (req, res, next)=>{
     //creating a "list" object using name=list[title] in form for ease.
     //console.log(req.body.list);
     let list = new List(req.body.list); //more readable and understandable as compare to destructured format {title,url,..etc}.
     
-    await list.save()
-    .then(()=>{console.log("__Data_inserted__")})
-    .catch(err => console.log(err));
+    await list.save(); // cleaner
+    console.log("__Data_inserted__");
 
     res.redirect("/lists");
-});
+}));
 
 //edit route
 app.get("/lists/:id/edit", async (req, res)=>{
@@ -78,6 +78,10 @@ app.delete("/lists/:id", async (req, res)=>{
     res.redirect("/lists");
 });
 
+app.use((err, req, res, next)=>{
+    res.send("Something went wrong.");
+});
+
 app.listen("8080", ()=>{
-    console.log("__Starts listening__");
+    console.log("__Starts listening at 8080__");
 });

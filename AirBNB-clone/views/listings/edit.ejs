@@ -17,32 +17,38 @@
             <img src="<%= list.image.url %>" height="300" class="mb-3 card-img-top">
             <br>
         
-            <form method="POST" action="/lists/<%= list._id %>?_method=PUT">
+            <form method="POST" action="/lists/<%= list._id %>?_method=PUT" class="needs-validation" novalidate>
                 <div class="mb-3">
                     <label for="title" class="form-label">Title: </label>
-                    <input type="text" name="list[title]" value="<%= list.title %>" class="form-control">
+                    <input type="text" name="list[title]" value="<%= list.title %>" class="form-control" required>
+                    <div class="invalid-feedback">Please choose a title.</div>
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label">Description: </label>
-                    <textarea name="list[description]" class="form-control"><%= list.description %></textarea>
+                    <textarea name="list[description]" class="form-control" required><%= list.description %></textarea>
+                    <div class="invalid-feedback">Write a description.</div>
                 </div>
                 <div class="mb-3">
                     <label for="url" class="form-label">Image link: </label>
-                    <input type="text" name="list[image][url]" value="<%= list.image.url %>" class="form-control">
+                    <input type="text" name="list[image][url]" value="<%= list.image.url %>" class="form-control" required>
+                    <div class="invalid-feedback">Add image link.</div>
                 </div>
                 <div class="row">
                     <div class="mb-3 col-md-4">
                         <label for="price" class="form-label">Price: </label>
-                        <input type="text" name="list[price]" value="<%= list.price %>" class="form-control">
+                        <input type="text" name="list[price]" value="<%= list.price %>" class="form-control" required>
+                        <div class="invalid-feedback">Add some price.</div>
                     </div>
                     <div class="mb-3 col-md-8">
                         <label for="country" class="form-label">Country: </label>
-                        <input type="text" name="list[country]" value="<%= list.country %>" class="form-control">
+                        <input type="text" name="list[country]" value="<%= list.country %>" class="form-control" required>
+                        <div class="invalid-feedback">Write your country.</div>
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="location" class="form-label">Location:</label>
-                    <input type="text" name="list[location]" value="<%= list.location %>" class="form-control">
+                    <input type="text" name="list[location]" value="<%= list.location %>" class="form-control" required>
+                    <div class="invalid-feedback">Add your location.</div>
                 </div>
                 <br>
                 <button class="btn btn-dark edit-btn">UPDATE</button>
