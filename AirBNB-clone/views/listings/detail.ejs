@@ -10,24 +10,24 @@
         
         <!-- Listing Card -->
         <div class="card shadow-sm">
-          <img src="<%= list.image.url %>" class="card-img-top show-img" alt="listing image">
+          <img src="<%= list.image.url %>" class="card-img-top show-img p-3" alt="listing image">
 
           <div class="card-body">
 
-            <p class="text-muted m-2">
+            <p class="text-muted m-3">
               Location: <strong><%= list.location %>, <%= list.country %></strong>
             </p>
 
-            <p><%= list.description %></p>
+            <p class="m-3"><%= list.description %></p>
 
             <hr>
 
-            <h4 class="text-success">&#8377; <%= list.price.toLocaleString("en-IN") %> / night</h4>
+            <h4 class="text-success m-3">&#8377; <%= list.price.toLocaleString("en-IN") %> / night</h4>
 
             <hr>
 
             <!-- Actions -->
-            <div class="d-flex justify-content-between mt-4">
+            <div class="d-flex justify-content-between m-3">
               <a href="/lists/<%= list._id %>/edit" class="btn btn-outline-primary">Edit</a>
 
               <form method="POST" action="/lists/<%= list._id %>?_method=DELETE" onsubmit="return confirmDelete()">
@@ -35,6 +35,26 @@
               </form>
             </div>
           </div>
+        </div>
+        <hr class="m-3">
+        <!-- Review Form -->
+        <div class="card p-4 shadow-sm"><!-- wrapped in Bootstrap card for better centering & styling -->
+          <h4 class="mb-3">Leave a review</h4>
+          <form class="needs-validation" novalidate> <!-- added Bootstrap validation classes -->
+            
+            <div class="mb-3"><!-- added mb-3 for spacing -->
+              <label for="rating" class="form-label">Rating</label>
+              <input type="range" min="1" max="5" id="rating" name="review[rating]" class="form-range"> <!-- added form-range class -->
+            </div>
+
+            <div class="mb-3">
+              <label for="comment" class="form-label">Comment</label>
+              <textarea name="review[comment]" id="comment" rows="5" class="form-control" required></textarea> <!-- added required attribute -->
+              <div class="invalid-feedback">Please enter your comment.</div> <!-- added Bootstrap invalid feedback -->
+            </div>
+
+            <button class="btn btn-outline-dark">Submit</button>
+          </form>
         </div>
 
       </div>
