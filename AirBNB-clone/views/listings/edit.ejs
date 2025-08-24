@@ -7,10 +7,10 @@
             <br>
             <h2 style="color: #fe424d;">Edit "<%= list.title %>" here...</h2>
             <br>
-            <img src="<%= list.image.url %>" height="300" class="mb-3 card-img-top">
+            <img src="<%= originalImageUrl %>" height="300" class="mb-3 card-img-top">
             <br>
         
-            <form method="POST" action="/lists/<%= list._id %>?_method=PUT" class="needs-validation" novalidate>
+            <form method="POST" action="/lists/<%= list._id %>?_method=PUT" class="needs-validation" novalidate enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="title" class="form-label">Title: </label>
                     <input type="text" name="list[title]" value="<%= list.title %>" class="form-control" required>
@@ -22,14 +22,14 @@
                     <div class="invalid-feedback">Write a description.</div>
                 </div>
                 <div class="mb-3">
-                    <label for="url" class="form-label">Image link: </label>
-                    <input type="text" name="list[image][url]" value="<%= list.image.url %>" class="form-control" required>
+                    <label for="url" class="form-label">Upload new image: </label>
+                    <input type="file" name="list[image]" class="form-control">
                     <div class="invalid-feedback">Add image link.</div>
                 </div>
                 <div class="row">
                     <div class="mb-3 col-md-4">
                         <label for="price" class="form-label">Price: </label>
-                        <input type="text" name="list[price]" value="<%= list.price %>" class="form-control" required>
+                        <input type="number" name="list[price]" value="<%= list.price %>" class="form-control" required>
                         <div class="invalid-feedback">Add some price.</div>
                     </div>
                     <div class="mb-3 col-md-8">

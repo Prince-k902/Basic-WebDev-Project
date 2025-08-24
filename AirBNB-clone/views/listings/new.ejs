@@ -6,7 +6,7 @@
     <div class="col-md-8 offset-2">
         <br>
         <h1>Add a listing to your villa.</h1>
-        <form method="post" action="/lists" class="needs-validation" novalidate>
+        <form method="post" action="/lists" class="needs-validation" novalidate enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="title" class="form-label">Title: </label>
                 <input type="text" name="list[title]" placeholder="eg. my villa" class="form-control" required>
@@ -18,14 +18,19 @@
                 <textarea name="list[description]" placeholder="write something about your villa" class="form-control"  required></textarea>
                 <div class="invalid-feedback">Write a description.</div>
             </div>
-            <div class="mb-3">
+            <!-- <div class="mb-3">
                 <label for="url" class="form-label">Image link: </label>
                 <input type="text" placeholder="paste image url" name="list[image][url]" class="form-control">  
+            </div> -->
+            <div class="mb-3">
+                <label for="image" class="form-label">Upload image: </label>
+                <input type="file" name="list[image]" class="form-control" required>  
+                <div class="invalid-feedback">Please Upload a image.</div>
             </div>
             <div class="row">
                 <div class="mb-3 col-md-4">
                     <label for="price" class="form-label">Price: </label>
-                    <input type="text" name="list[price]" placeholder="1200" class="form-control" required>
+                    <input type="number" name="list[price]" placeholder="1200" class="form-control" required>
                     <div class="invalid-feedback">Please set a price.</div>
                 </div>
                 <div class="mb-3 col-md-8">
